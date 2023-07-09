@@ -1,0 +1,23 @@
+// Mixins
+
+
+//Media Queries
+@mixin mq($break) {
+$value: map-get($breakpoints, $break);
+$med: map-get($breakpoints, 'med');            
+   
+   @if $value == null {
+      @error "#{$break} is nor a valid breakpoint name.";         
+   }
+            
+   @else if $value < $med {
+      @media (max-width: $value){
+        @content;      
+      }         
+   }  
+   @else {
+      @media (min-width: $value) {
+        @content;    
+      }       
+   }
+}
