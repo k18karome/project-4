@@ -11,26 +11,36 @@
   text-transform: uppercase;
   border-radius: 5px;
   @include mq(med) {
-    padding: 10px 30px;
+    & {
+      padding: 10px 30px;
+    }
+    & + & {
+      margin-left: 10px;
+    } 
   }
 }
 
 .default {
   background-color: $color-default;
+  @include btn-hover($color-default);
 }
 
 .error {
   background-color: $color-error;
+  @include btn-hover($color-error);
 }
 
 .info {
   background-color: $purple;
+  @include btn-hover($purple);
 }
 
 .success {
   background-color: $green;
+  @include btn-hover($green);
 }
 
 .warning {
   background-color: $color-warning;
+  @include btn-hover($color-warning);
 }

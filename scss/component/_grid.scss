@@ -28,11 +28,16 @@
   padding: 10px;
   border-radius: 5px;
   @include mq(med) {
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
-    align-items: center;
-  }
+    & {
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+      align-items: center;
+    }
+    & + & {
+      margin-left: 10px;
+    }
+  }  
 }
 
 .theme.col-1 {
@@ -81,7 +86,11 @@
   background-color: #ec9fa3;
   @include mq(med) {
     flex-basis: 58.33%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
+
 }
 
 .theme.col-8 {

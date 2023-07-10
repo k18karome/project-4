@@ -1,5 +1,20 @@
 // Mixins
+@mixin img-base {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 10px;
+   max-width: 100%; 
+}
 
+// Transitions 
+@mixin btn-hover($color) {
+   background-color: $color;
+   transition: background .5s ease-in;
+   &:hover {
+      background: lighten($color, 15%);
+   }
+}
 
 //Media Queries
 @mixin mq($break) {
